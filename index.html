@@ -166,6 +166,46 @@
         width: 100%;
         height: 100%;
       }
+      #big_text_display {
+        animation: bigTextAnimation 3s forwards;
+        color: white;
+      }
+      @keyframes bigTextAnimation {
+        0% {
+          font-size: 0;
+          opacity: 0;
+        }
+        50% {
+          font-size: 50vh;
+          opacity: 1;
+        }
+        80% {
+          font-size: 100vh;
+          opacity: 0;
+        }
+      }
+      .fade_out {
+        animation: fadeOut 0.5s forwards;
+      }
+      .fade_in {
+        animation: fadeIn 0.5s forwards;
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
       .htmx-settling img {
         opacity: 0;
       }
@@ -195,24 +235,352 @@
         </div>
       </section>
       <!-- Title -->
-      <!-- Section 2
-      <section
-        hx-get="page_blocks/landing/main_section.html"
-        hx-trigger="load"
-        id="main_section"
-        class="relative place-self-center">
-        <div class="sk-chase">
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
-          <div class="sk-chase-dot"></div>
+      <!-- Section 2 -->
+      <section class="relative place-self-center" id="start_card">
+        <div class="max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="">
+            <!-- Pricing Card -->
+            <div
+              class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow bg-opacity-70 dark:border-gray-600 dark:bg-opacity-70 xl:p-8 dark:bg-gray-800 dark:text-white">
+              <h3 class="mb-8 text-4xl font-semibold rubik-bubbles-regular">
+                How to play.
+              </h3>
+              <!-- List -->
+              <ul role="list" class="mb-8 space-y-4 text-left">
+                <li class="flex items-center space-x-3">
+                  <!-- Icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-play">
+                    <polygon points="6 3 20 12 6 21 6 3" />
+                  </svg>
+
+                  <span>Press start button.</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <!-- Icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-person-standing">
+                    <circle cx="12" cy="5" r="1" />
+                    <path d="m9 20 3-6 3 6" />
+                    <path d="m6 8 6 2 6-2" />
+                    <path d="M12 10v4" />
+                  </svg>
+
+                  <span>Stand up from your computer.</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <!-- Icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-door-open">
+                    <path d="M13 4h3a2 2 0 0 1 2 2v14" />
+                    <path d="M2 20h3" />
+                    <path d="M13 20h9" />
+                    <path d="M10 12v.01" />
+                    <path
+                      d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z" />
+                  </svg>
+                  <span>Go outside and do something.</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <!-- Icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-speech">
+                    <path
+                      d="M8.8 20v-4.1l1.9.2a2.3 2.3 0 0 0 2.164-2.1V8.3A5.37 5.37 0 0 0 2 8.25c0 2.8.656 3.054 1 4.55a5.77 5.77 0 0 1 .029 2.758L2 20" />
+                    <path d="M19.8 17.8a7.5 7.5 0 0 0 .003-10.603" />
+                    <path d="M17 15a3.5 3.5 0 0 0-.025-4.975" />
+                  </svg>
+                  <span>Socialize, hang out, enjoy life.</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <!-- Icon -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="gold"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-trophy">
+                    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                    <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                    <path d="M4 22h16" />
+                    <path
+                      d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                    <path
+                      d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                  </svg>
+                  <span>Win awards for not being here.</span>
+                </li>
+              </ul>
+              <button
+                type="button"
+                id="start_button"
+                class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-2 focus:ring-primary-700 focus:text-primary-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-primary-500 dark:focus:text-white">
+                Start
+              </button>
+            </div>
+            <!-- Pricing Card -->
+          </div>
         </div>
       </section>
-      Section 2 -->
+      <!-- Section 2 -->
+      <section
+        class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50"
+        id="big_text">
+        <span
+          id="big_text_display"
+          class="font-semibold rubik-bubbles-regular"></span>
+      </section>
+      <!-- Game loop display -->
+      <section class="hidden relative place-self-center" id="game_loop_display">
+        <div class="max-w-screen-xl lg:py-16 lg:px-6">
+          <div class="flex flex-col justify-between">
+            <div
+              class="p-6 mx-auto max-w-lg text-center text-gray-900 xl:p-8 dark:text-white">
+              <h3
+                id="timer_display"
+                class="mb-8 text-4xl font-semibold rubik-bubbles-regular drop-shadow-md"></h3>
+            </div>
+            <div
+              class="grid gap-8 lg:gap-16 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8"
+              id="awards_display"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Game loop display -->
+
+      <div id="award_card" class="hidden relative">
+        <button
+          type="button"
+          class="h-16 w-16 grid place-items-center text-sm font-medium text-center text-white rounded-full focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+          <img
+            id="award_icon"
+            class="rounded-full w-16 h-16"
+            src="/favicon/favicon-32x32.png"
+            alt="" />
+          <span
+            id="award_text"
+            class="bg-indigo-100 text-indigo-800 text-xs font-medium mt-2 me-2 px-2.5 py-0.5 rounded dark:bg-indigo-900 dark:text-indigo-300 text-nowrap"></span>
+        </button>
+        <div
+          class="hidden absolute bottom-0 right-0 inline-flex items-center justify-center bg-green-100 text-green-800 text-xs font-medium text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300"
+          id="award_value"></div>
+      </div>
+
+      <!-- awards card -->
+      <div
+        class="hidden text-center text-gray-500 dark:text-gray-400 hover:drop-shadow-md">
+        <div class="relative w-16 h-16">
+          <img
+            class="mx-auto w-16 h-16 rounded-full border-gray-100"
+            src="/favicon/favicon-32x32.png"
+            alt="" />
+        </div>
+        <p class="font-bold tracking-tight text-gray-900 dark:text-white"></p>
+      </div>
+      <!-- awards card -->
     </main>
     <script type="module" src="js/grass.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", (event) => {
+        console.log("DOM fully loaded and parsed");
+        let startTime;
+        let elapsedTime = 0;
+        let intervalId;
+        const startCard = document.getElementById("start_card");
+        const startButton = document.getElementById("start_button");
+        const timerDisplay = document.getElementById("timer_display");
+        const gameLoopDisplay = document.getElementById("game_loop_display");
+        const bigText = document.getElementById("big_text");
+        const bigTextDisplay = document.getElementById("big_text_display");
+        const awardsDisplay = document.getElementById("awards_display");
+        const awardsCard = document.getElementById("award_card");
+
+        const awards = [
+          {
+            time: 1,
+            icon: "/assets/awards/0.webp",
+            title: "gtfoh",
+          },
+          {
+            time: 15,
+            icon: "/assets/awards/1.webp",
+            title: "this means you",
+          },
+          {
+            time: 30,
+            icon: "/assets/awards/2.webp",
+            title: "aight imma head out",
+          },
+          {
+            time: 60,
+            icon: "/assets/awards/3.webp",
+            title: "exit stage left",
+          },
+          {
+            time: 120,
+            icon: "/assets/awards/4.webp",
+            title: "f**k it we out",
+          },
+          {
+            time: 240,
+            icon: "/assets/awards/5.webp",
+            title: "doing nothing",
+          },
+        ];
+
+        const stopTimer = () => {
+          if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+            timerDisplay.innerText = formatTime(elapsedTime);
+            // reset start card
+            startCard.classList.remove("hidden");
+            // hide game loop and big text
+            gameLoopDisplay.classList.add("hidden");
+            bigText.classList.add("hidden");
+          }
+        };
+
+        const formatTime = (totalSeconds) => {
+          const days = Math.floor(totalSeconds / 86400);
+          const hours = Math.floor((totalSeconds % 86400) / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+
+          if (days > 0) {
+            return `${days} d`;
+          } else if (hours > 0) {
+            return `${hours} h`;
+          } else if (minutes > 0) {
+            return `${minutes} m`;
+          } else {
+            return `${seconds} s`;
+          }
+        };
+
+        startButton.addEventListener("click", () => {
+          if (!intervalId) {
+            // if this is second go round, remove fade-in
+            startCard.classList.remove("fade_in");
+            startCard.classList.add("fade_out");
+
+            setTimeout(() => {
+              // hide start card after 500ms and start the game loop
+              startCard.classList.add("hidden", "fade_in");
+              gameLoopDisplay.classList.remove("hidden");
+              bigText.classList.remove("hidden");
+
+              const messages = ["Ready?", "Set", "Go!"];
+              let countdown = 3;
+              bigTextDisplay.innerText = messages[3 - countdown];
+
+              const countdownInterval = setInterval(() => {
+                countdown--;
+
+                if (countdown > 0 && countdown != false) {
+                  bigTextDisplay.innerText = messages[3 - countdown];
+                }
+                if (countdown === 0 && countdown !== false) {
+                  bigTextDisplay.classList.add("hidden");
+                  console.log("Countdown done");
+                  countdown = false;
+                }
+
+                if (countdown === false) {
+                  clearInterval(countdownInterval);
+                  startTime = new Date();
+                  intervalId = setInterval(() => {
+                    const now = new Date();
+                    elapsedTime = Math.round((now - startTime) / 1000);
+                    timerDisplay.innerText = formatTime(elapsedTime);
+                    console.log(elapsedTime);
+
+                    awards.forEach((award, index) => {
+                      if (elapsedTime === award.time) {
+                        // Clone the awards card
+                        const awardElement = awardsCard.cloneNode(true);
+
+                        //const imgElement = awardElement.querySelector("img");
+                        awardElement.id = `award-${index}`;
+
+                        const imgElement =
+                          awardElement.querySelector("#award_icon");
+                        imgElement.id = `award_icon-${index}`;
+                        imgElement.src = award.icon;
+                        imgElement.alt = award.title;
+
+                        const valElement =
+                          awardElement.querySelector("#award_value");
+                        valElement.id = `award_value-${index}`;
+                        valElement.innerText = formatTime(award.time);
+
+                        const spanElement =
+                          awardElement.querySelector("#award_text");
+                        spanElement.id = `award_text-${index}`;
+                        spanElement.innerText =
+                          award.title + " at " + formatTime(award.time);
+
+                        awardsDisplay.appendChild(awardElement);
+                        // Remember to unhide the awards card guy
+                        awardElement.classList.remove("hidden");
+                      }
+                    });
+                  }, 1000);
+                } else {
+                  stopTimer();
+                }
+              }, 1000);
+            });
+          }
+        });
+
+        // Kill timer
+        document.addEventListener("mousemove", stopTimer);
+        document.addEventListener("keydown", stopTimer);
+      });
+    </script>
   </body>
 </html>
